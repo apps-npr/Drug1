@@ -15,7 +15,7 @@
     </header>
     <section>
       <table id="tbl">
-        <thead><tr><th>ลำดับ</th><th>ชื่อยา</th><th>ความแรง</th><th>จำนวนขวด</th><th>วัตถุดิบ/เม็ดยา</th><th>จำนวนเม็ดรวม</th></tr></thead>
+        <thead><tr><th>ลำดับ</th><th>ชื่อยา</th><th>ความแรง</th><th>จำนวนขวด</th><th>วัตถุดิบ/เม็ดยา</th></tr></thead>
         <tbody></tbody>
       </table>
     </section>
@@ -40,7 +40,7 @@ async function api(path, payload){
   const tb=document.querySelector('#tbl tbody');
   (r.lines||[]).forEach((x,i)=>{const tr=document.createElement('tr');
     const comp=(x.components||'').replace(/\n/g,'<br>');
-    tr.innerHTML=`<td>${i+1}</td><td>${x.drug}</td><td>${x.strength}</td><td>${x.bottles}</td><td>${comp||'-'}</td><td>${x.total_tabs||'-'}</td>`;
+    tr.innerHTML=`<td>${i+1}</td><td>${x.drug}</td><td>${x.strength}</td><td>${x.bottles}</td><td>${comp||'-'}</td>`;
     tb.appendChild(tr);});
   setTimeout(()=>window.print(),200);
 })();
